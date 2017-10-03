@@ -852,9 +852,9 @@ colors {
         statusline #eeeeee
         separator  #666666
         #                     border  backgr. text
-        focused_workspace     #a9a9a9 #5f676a #eeeeee
-        active_workspace      #a9a9a9 #5f676a #a9a9a9
-        inactive_workspace    #a9a9a9 #222222 #a9a9a9
+        focused_workspace     #263238 #263238 #fea63c
+        active_workspace      #263238 #263238 #6a6b6c
+        inactive_workspace    #263238 #263238 #6a6b6c
         urgent_workspace      #a9a9a9 #d42121 #FFFFFF
         }
 
