@@ -126,16 +126,16 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#263238' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Inconsolata:bold:pixelsize=16'
 
 # start xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
 
 # start rofi full
-bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto Sans 13"
+# bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto Sans 13"
 
 # start rofi small
-bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 13"
+# bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 13"
 
 # gmrun
 bindsym mod1+F2 exec --no-startup-id gmrun
@@ -334,7 +334,7 @@ mode "resize" {
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # choose your font
-font pango:Noto Mono Regular 13
+font Inconsolata 13
 
 
 
@@ -392,23 +392,12 @@ for_window [class="Spotify"] move to workspace 10
 
 # USER APPLICATIONS TO START AT BOOT
 
-#browser
-exec --no-startup-id vivaldi-snapshot
-for_window [class="Vivaldi-snapshot"] focus
+# #browser
+# exec --no-startup-id vivaldi-snapshot
+# for_window [class="Vivaldi-snapshot"] focus
 
-#text-editor
-exec --no-startup-id geany
-#exec --no-startup-id atom
-
-#file manager
-exec --no-startup-id thunar
-
-#Mail clients
-#exec --no-startup-id evolution
-
-#Music
-#exec --no-startup-id spotify
-for_window [class="Spotify"] focus
+#Wallpaper
+exec --no-startup-id nitrogen --restore
 
 
 
@@ -468,8 +457,7 @@ exec --no-startup-id xfsettingsd &
 #not workspace related
 
 # terminal
-bindsym $mod+Return exec --no-startup-id termite;focus
-bindsym control+mod1+t exec --no-startup-id termite; focus
+bindsym $mod+Return exec --no-startup-id xfce4-terminal; focus
 
 #System monitor
 bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
@@ -750,9 +738,9 @@ popup_during_fullscreen smart
 # want it
 
 
-for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
+# for_window [class="^.*"] border pixel 2
+# gaps inner 5
+# gaps outer 5
 #smart_gaps on
 #smart_borders on
 
@@ -826,9 +814,9 @@ exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 bar {
 
-    height 25
+    # height 25
     workspace_buttons yes
-    font pango:Noto Sans 14
+    font Inconsola 10
     #you can know the name via xrandr
     #output DVI-0
 
@@ -838,8 +826,8 @@ bar {
     # you will get the standard i3status bar
     # Second one is the standard statusbar with my personal settings
 
-#status_command i3status
-#status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3status
+# status_command i3status -c ~/.config/i3/i3status.conf
 
 
 # OPTION 2 : i3blocks
@@ -849,9 +837,9 @@ bar {
     # put hastag in front if not installed
 
 #status_command i3blocks
-status_command i3blocks -c ~/.config/i3/i3blocks.conf
-#status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-#status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
+# status_command i3blocks -c ~/.config/i3/i3blocks.conf
+# status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
+# status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
 
 
 # OPTION 3 : conky
@@ -865,7 +853,7 @@ status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 
 colors {
-        background #2F2F2F
+       background #263238
         statusline #eeeeee
         separator  #666666
         #                     border  backgr. text
