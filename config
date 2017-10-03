@@ -499,9 +499,9 @@ bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
 #workspace related
 
 #workspace 1 related
-bindsym $mod+F1 exec --no-startup-id exo-open --launch webbrowser;workspace 1;focus
+bindsym $mod+F1 exec --no-startup-id vivaldi-stable;workspace 1;focus
 #qwerty/azerty conflict with w
-bindsym $mod+w exec --no-startup-id exo-open --launch webbrowser;workspace 1;focus
+bindsym $mod+w exec --no-startup-id  vivaldi-stable;workspace 1;focus
 bindsym control+mod1+f exec --no-startup-id firefox;workspace 1; focus
 bindsym control+mod1+v exec --no-startup-id vivaldi-snapshot;workspace 1; focus
 bindsym control+mod1+g exec --no-startup-id chromium;workspace 1;focus
@@ -800,7 +800,6 @@ mode "$mode_gaps_outer" {
 
 #if you want transparency on non-focused windows, ...
 exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
-
 
 
 
