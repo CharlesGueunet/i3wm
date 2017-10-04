@@ -499,16 +499,9 @@ bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
 
 #workspace 1 related
 bindsym $mod+F1 exec --no-startup-id vivaldi-stable;workspace 1;focus
-#qwerty/azerty conflict with w
-bindsym $mod+w exec --no-startup-id  vivaldi-stable;workspace 1;focus
-bindsym control+mod1+f exec --no-startup-id firefox;workspace 1; focus
-bindsym control+mod1+v exec --no-startup-id vivaldi-snapshot;workspace 1; focus
-bindsym control+mod1+g exec --no-startup-id chromium;workspace 1;focus
 
 #workspace 2 related
-bindsym $mod+F2 exec --no-startup-id geany;workspace 2;focus
-#bindsym $mod+F2 exec --no-startup-id atom;workspace 2;focus
-bindsym control+mod1+w exec --no-startup-id geany;workspace 2;focus
+bindsym $mod+F2 exec --no-startup-id xfce4-terminal;workspace 2;focus
 
 #workspace 3 related
 bindsym $mod+F3 exec --no-startup-id inkscape;workspace 3;focus
@@ -517,31 +510,15 @@ bindsym $mod+F3 exec --no-startup-id inkscape;workspace 3;focus
 bindsym $mod+F4 exec --no-startup-id gimp;workspace 4;focus
 
 #workspace 5 related
-bindsym $mod+F5 exec --no-startup-id meld;workspace 5;focus
-bindsym control+mod1+i exec --no-startup-id nitrogen;workspace 5;focus
+bindsym $mod+F5 exec --no-startup-id nitrogen;workspace 5;focus
 
 #workspace 6 related
 bindsym $mod+F6 exec --no-startup-id vlc;workspace 6;focus
 
 #workspace 7 related
-bindsym $mod+F7 exec --no-startup-id virtualbox;workspace 7;focus
-
-#workspace 8 related
 for_window [class="Thunar"] focus
-bindsym $mod+F8 exec --no-startup-id thunar;workspace 8;focus
-bindsym $mod+Shift+Return exec --no-startup-id thunar; workspace 8;focus
-bindsym control+mod1+b exec --no-startup-id thunar;workspace 8;focus
-
-#workspace 9 related
-bindsym $mod+F9 exec --no-startup-id evolution;workspace 9;focus
-bindsym control+mod1+e exec --no-startup-id evolution;workspace 9;focus
-#bindsym $mod+F9 exec --no-startup-id geary;workspace 9;focus
-#bindsym control+mod1+e exec --no-startup-id geary;workspace 9;focus
-
-#workspace 10 related
-bindsym $mod+F10 exec --no-startup-id spotify;workspace 10;focus
-bindsym control+mod1+s exec --no-startup-id spotify;workspace 10;focus
-
+bindsym $mod+F7 exec --no-startup-id thunar;workspace 7;focus
+bindsym $mod+Shift+Return exec --no-startup-id thunar; workspace 7;focus
 
 
 
@@ -848,7 +825,7 @@ bar {
 
 
 colors {
-       background #263238
+        background #263238
         statusline #eeeeee
         separator  #666666
         #                     border  backgr. text
