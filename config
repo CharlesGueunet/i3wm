@@ -496,7 +496,7 @@ bindsym $mod+Return exec --no-startup-id st; focus
 
 #pavucontrol
 #archlabs conflict
-bindsym control+mod1+u exec --no-startup-id pavucontrol
+# bindsym control+mod1+u exec --no-startup-id pavucontrol
 
 # start xfce-appfinder
 #archlabs does not seem to work
@@ -507,28 +507,22 @@ bindsym control+mod1+u exec --no-startup-id pavucontrol
 #workspace related
 
 #workspace 1 related
-bindsym $mod+F1 exec --no-startup-id vivaldi-stable;workspace 1;focus
+bindsym $mod+F1 exec --no-startup-id vivaldi-stable;focus
 
 #workspace 2 related
-bindsym $mod+F2 exec --no-startup-id xfce4-terminal;workspace 2;focus
+bindsym $mod+F2 exec --no-startup-id xfce4-terminal;focus
 
 #workspace 3 related
-bindsym $mod+F3 exec --no-startup-id inkscape;workspace 3;focus
+bindsym $mod+F3 exec --no-startup-id inkscape;focus
 
 #workspace 4 related
-bindsym $mod+F4 exec --no-startup-id gimp;workspace 4;focus
+bindsym $mod+F4 exec --no-startup-id gimp;focus
 
 #workspace 5 related
-bindsym $mod+F5 exec --no-startup-id nitrogen;workspace 5;focus
+bindsym $mod+F5 exec --no-startup-id nitrogen;focus
 
 #workspace 6 related
-bindsym $mod+F6 exec --no-startup-id vlc;workspace 6;focus
-
-#workspace 7 related
-for_window [class="Thunar"] focus
-bindsym $mod+F7 exec --no-startup-id thunar;workspace 7;focus
-bindsym $mod+Shift+Return exec --no-startup-id thunar; workspace 7;focus
-
+bindsym $mod+F6 exec --no-startup-id vlc;focus
 
 
 #####################################################################################################################
