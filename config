@@ -441,8 +441,8 @@ for_window [class="Xfburn"] floating disable
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
-for_window [class="google play music desktop player"] floating enable
-for_window [class="google play music desktop player"] resize set 50 50
+for_window [class="Google\ Play\ Music\ Desktop\ Player"] floating enable
+for_window [class="Google\ Play\ Music\ Desktop\ Player"] resize set 300 300
 
 
 
