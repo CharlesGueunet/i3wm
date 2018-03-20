@@ -416,10 +416,13 @@ bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e '
 
 #floating enabled from some programs - find with xprop
 
+for_window [class="Arandr"] floating enable
 for_window [class="Bleachbit"] floating disable
 for_window [class="Blueberry.py"] floating enable
 for_window [class="Brasero"] floating disable
 for_window [class="Galculator"] floating enable
+for_window [class="Google\ Play\ Music\ Desktop\ Player"] floating enable
+for_window [class="Google\ Play\ Music\ Desktop\ Player"] resize set 300 300
 for_window [class="Gnome-disks"] floating disable
 for_window [class="^Gnome-font-viewer$"] floating enable
 for_window [class="^Gpick$"] floating enable
@@ -441,9 +444,6 @@ for_window [class="Xfburn"] floating disable
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
-for_window [class="Google\ Play\ Music\ Desktop\ Player"] floating enable
-for_window [class="Google\ Play\ Music\ Desktop\ Player"] resize set 300 300
-
 
 
 #for_window [instance="gimp"] floating disable
