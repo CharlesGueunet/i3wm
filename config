@@ -362,8 +362,8 @@ exec --no-startup-id nitrogen --restore
 
 #not workspace related
 
-# terminal
-bindsym $mod+Return exec --no-startup-id st; focus
+# terminal ($TERMINAL to change)
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal; focus
 
 #System monitor
 # bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
@@ -441,6 +441,9 @@ for_window [class="Xfburn"] floating disable
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Xfce4-settings-manager"] floating disable
 for_window [class="Xfce4-taskmanager"] floating enable
+for_window [class="google play music desktop player"] floating enable
+for_window [class="google play music desktop player"] resize set 50 50
+
 
 
 #for_window [instance="gimp"] floating disable
