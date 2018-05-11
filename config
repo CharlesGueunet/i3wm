@@ -566,6 +566,7 @@ popup_during_fullscreen smart
 
 # Setting base color
 set $bg_gray  #263238
+set $bg_dark  #162228
 set $fg_gray  #777777
 set $fg_white #eeeeee
 set $orange   #fea63c
@@ -590,7 +591,7 @@ bar {
 
         #                  border   backgr.  text
         focused_workspace  $bg_gray $bg_gray $orange
-        active_workspace   $bg_gray $bg_gray $fg_gray
+        active_workspace   $bg_gray $bg_dark $fg_gray
         inactive_workspace $bg_gray $bg_gray $fg_gray
         urgent_workspace   $bg_gray $red     $bg_white
     }
