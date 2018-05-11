@@ -36,7 +36,6 @@
 set $mod Mod4
 
 
-
 #####################################################################################################################
 #################                          Define the movements keys - variables                    #################
 #####################################################################################################################
@@ -135,7 +134,7 @@ bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '#263238' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Inconsolata:bold:pixelsize=16'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '$bg_gray' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Inconsolata:bold:pixelsize=16'
 
 # start xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
@@ -560,10 +559,19 @@ popup_during_fullscreen smart
 #####################################################################################################################
 #####################################################################################################################
 #####################################################################################################################
-#################                          bar appearance                                           #################
+#################                            appearance                                             #################
 #####################################################################################################################
 #####################################################################################################################
 #####################################################################################################################
+
+# Setting base color
+set $bg_gray  #263238
+set $fg_gray  #777777
+set $fg_white #eeeeee
+set $orange   #fea63c
+set $red      #d42121
+set $unused   #990000
+
 
 bar {
 
@@ -572,61 +580,32 @@ bar {
     font Inconsola 10
     #you can know the name via xrandr
     # output DVI-I-1
-
-# OPTION 1 : i3status
-
-    # type status_command i3status without the config file and
-    # you will get the standard i3status bar
-    # Second one is the standard statusbar with my personal settings
-
-    # status_command i3status
     status_command i3status -c ~/.config/i3/i3status.conf
 
 
-# OPTION 2 : i3blocks
+    colors {
+        background $bg_gray
+        statusline $fg_white
+        separator  $fg_gray
 
-    # https://github.com/vivien/i3blocks
-    # another way to provide text in the statusbar
-    # put hastag in front if not installed
-
-#status_command i3blocks
-# status_command i3blocks -c ~/.config/i3/i3blocks.conf
-# status_command i3blocks -c ~/.config/i3/i3blocks-original.conf
-# status_command i3blocks -c ~/.config/i3/i3blocks-awesome.conf
-
-
-# OPTION 3 : conky
-
-    # You can also replace the istatus bar with a conky
-    # start-conky-i3statusbar.sh is started and conky will follow
-    # documentation : https://i3wm.org/docs/user-contributed/conky-i3bar.html
-    # conky configuration is in conky-i3statusbar
-
-#status_command ~/.config/i3/start-conky-i3statusbar.sh
-
-
-colors {
-        background #263238
-        statusline #eeeeee
-        separator  #666666
-        #                     border  backgr. text
-        focused_workspace     #263238 #263238 #fea63c
-        active_workspace      #263238 #263238 #6a6b6c
-        inactive_workspace    #263238 #263238 #6a6b6c
-        urgent_workspace      #a9a9a9 #d42121 #FFFFFF
-        }
-
+        #                  border   backgr.  text
+        focused_workspace  $bg_gray $bg_gray $orange
+        active_workspace   $bg_gray $bg_gray $fg_gray
+        inactive_workspace $bg_gray $bg_gray $fg_gray
+        urgent_workspace   $bg_gray $red     $bg_white
     }
+
+}
 
 
 # Windows decoration colors
-# class                 border  backgr. text    indicator
-client.placeholder      #263238 #263238 #242424
-client.background       #263238 #263238 #242424
-client.focused          #263238 #263238 #e5e5e5 #4A4A4A
-client.unfocused        #263238 #263238 #777777 #222222
-client.focused_inactive #263238 #263238 #a9a9a9 #222222
-client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+# class                 border   backgr.  text      indicator
+client.placeholder      $bg_gray $bg_gray $unused
+client.background       $bg_gray $bg_gray $unused
+client.focused          $bg_gray $bg_gray $orange   $unused
+client.unfocused        $bg_gray $bg_gray $fg_gray  $unused
+client.focused_inactive $bg_gray $bg_gray $fg_gray  $unused
+client.urgent           $red     $red     $fg_white $unused
 
 
 #################################################################
