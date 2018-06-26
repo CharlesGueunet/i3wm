@@ -41,19 +41,11 @@ set $mod Mod4
 #####################################################################################################################
 
 
-#This is setup for qwerty
-set $up l
-set $down k
-set $left j
-set $right semicolon
-
-#This is setup for azerty
-#set $up l
-#set $down k
-#set $left j
-#set $right m
-
-
+# Vim like
+set $up k
+set $down j
+set $left h
+set $right l
 
 #####################################################################################################################
 #################                          Single and Dual screen                                   #################
@@ -63,7 +55,7 @@ set $right semicolon
 # setting variables for later use
 # use xrandr and/or arandr to know the names of your monitors
 # use this line to tell which monitor is on the right
-# xrandr --output DVI-I-2 --right-of DVI-I-1 --auto
+exec --no-startup-ip xrandr --output DP-2 --right-of DP-4 --auto
 # exec --no-startup-id xrandr --output HDMI2 --right-of HDMI1 --auto
 
 # my current setup
@@ -219,16 +211,16 @@ floating_modifier $mod
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
+# change focus: vim like
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
 bindsym $mod+$right focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+# Arrows
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # move focused window
@@ -242,9 +234,6 @@ bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
-
-
-
 
 #####################################################################################################################
 #################                          moving around workspaces                                 #################
@@ -265,9 +254,6 @@ bindsym Mod1+Ctrl+Left workspace prev
 for_window [urgent=latest] focus
 
 
-
-
-
 #####################################################################################################################
 #################                          Tiling parameters                                        #################
 #####################################################################################################################
@@ -276,7 +262,7 @@ for_window [urgent=latest] focus
 default_orientation horizontal
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
