@@ -242,8 +242,8 @@ bindsym $mod+Shift+Right move right
 
 # next/previous workspace
 
-bindsym Mod1+Tab workspace next
-bindsym Mod1+Shift+Tab workspace prev
+# bindsym Mod1+Tab workspace next
+# bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
 
 #navigate workspaces next / previous
@@ -252,7 +252,6 @@ bindsym Mod1+Ctrl+Left workspace prev
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
-
 
 #####################################################################################################################
 #################                          Tiling parameters                                        #################
@@ -388,6 +387,7 @@ bindsym $mod+F5 exec --no-startup-id nitrogen;focus
 # media
 bindsym $mod+F6 exec --no-startup-id vlc;focus
 
+bindsym $mod+Shift+a sticky toggle
 
 #####################################################################################################################
 #################                          screenshots                                              #################
@@ -454,9 +454,8 @@ for_window [window_role="^Preferences$"] floating enable
 for_window [window_role="setup"] floating enable
 
 
-
-
-
+# Assign applicattion to workspace:
+assign [class="^ParaView.*" window_type="normal"] 4
 
 #####################################################################################################################
 #################                          give focus to applications                               #################
