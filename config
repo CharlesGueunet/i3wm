@@ -132,7 +132,7 @@ bindsym $mod+minus scratchpad show
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '$bg_gray' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'Roboto:bold:pixelsize=12'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '$bg_gray' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'firacode:bold:pixelsize=12'
 
 # start xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
@@ -334,6 +334,9 @@ mode "resize" {
 # is used in the bar {} block below.
 # choose your font
 font Inconsolata 13
+
+# disable title by default
+for_window [class="^.*"] border pixel 1
 
 
 #####################################################################################################################
@@ -569,10 +572,12 @@ bar {
 
     # height 25
     workspace_buttons yes
-    font Inconsola 10
+    # font firacode 10
     #you can know the name via xrandr
     # output DVI-I-1
-    status_command i3status -c ~/.config/i3/i3status.conf
+    # status_command i3status -c ~/.config/i3/i3status.conf
+    # status_command $HOME/.config/i3/myi3status.sh -c ~/.config/i3/i3status.conf
+    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 
 
     colors {
