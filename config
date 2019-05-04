@@ -589,7 +589,7 @@ bar {
         focused_workspace  $bg_gray $bg_gray $orange
         active_workspace   $bg_gray $bg_dark $fg_gray
         inactive_workspace $bg_gray $bg_gray $fg_gray
-        urgent_workspace   $bg_gray $red     $bg_white
+        urgent_workspace   $bg_gray $bg_gray $orange
     }
 
 }
