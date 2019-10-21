@@ -132,7 +132,7 @@ bindsym $mod+minus scratchpad show
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '$bg_gray' -nf '#fea63c' -sb '#fea63c' -sf '#191919' -fn 'firacode:bold:pixelsize=12'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '$bg1' -nf '$orange' -sb '$bg2' -sf '$fg1' -fn 'firacode:bold:pixelsize=12'
 
 # start xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
@@ -556,14 +556,12 @@ popup_during_fullscreen smart
 #####################################################################################################################
 
 # Setting base color
-set $bg_gray  #263238
-set $bg_dark  #162228
-set $fg_gray  #777777
-set $fg_white #eeeeee
-set $orange   #fea63c
-set $red      #d42121
-set $unused   #990000
-
+set_from_resource $fg1 i3wm.foreground #ffffff
+set_from_resource $fg2 i3wm.color7 #f0f0f0
+set_from_resource $bg1 i3wm.background #000000
+set_from_resource $bg2 i3wm.color0 #0f0f0f
+set_from_resource $orange i3wm.color3 #fea63c
+set_from_resource $red i3wm.color1 #d42121
 
 bar {
 
@@ -578,28 +576,27 @@ bar {
 
 
     colors {
-        background $bg_gray
-        statusline $fg_white
-        separator  $fg_gray
+        background $bg1
+        statusline $fg1
+        separator  $fg2
 
         #                  border   backgr.  text
-        focused_workspace  $bg_gray $bg_gray $orange
-        active_workspace   $bg_gray $bg_dark $fg_gray
-        inactive_workspace $bg_gray $bg_gray $fg_gray
-        urgent_workspace   $bg_gray $bg_gray $orange
+        focused_workspace  $bg1 $bg1 $orange
+        active_workspace   $bg1 $bg2 $fg2
+        inactive_workspace $bg1 $bg1 $fg2
+        urgent_workspace   $bg1 $bg1 $orange
     }
 
 }
 
 
-# Windows decoration colors
-# class                 border   backgr.  text      indicator
-client.placeholder      $bg_gray $bg_gray $unused
-client.background       $bg_gray $bg_gray $unused
-client.focused          $bg_gray $bg_gray $orange   $bg_gray
-client.unfocused        $bg_gray $bg_gray $fg_gray  $bg_gray
-client.focused_inactive $bg_gray $bg_gray $fg_gray  $bg_gray
-client.urgent           $red     $red     $fg_white $bg_gray
+client.focused          $bg1    $bg1    $orange  $bg1      $bg1
+client.focused_inactive $bg1    $bg1    $fg1     $bg1      $bg1
+client.unfocused        $bg1    $bg1    $fg2     $bg1      $bg1
+client.urgent           $bg1    $bg1    $red     $bg1      $bg1
+client.placeholder      $bg1    $bg1    $fg1     $bg1      $bg1
+
+client.background       $bg1
 
 
 
