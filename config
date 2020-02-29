@@ -132,7 +132,7 @@ bindsym $mod+minus scratchpad show
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -nb '$bg1' -nf '$orange' -sb '$bg2' -sf '$fg1' -fn 'firacode:bold:pixelsize=12'
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -b -nb '$bg1' -nf '$orange' -sb '$bg2' -sf '$fg1' -fn 'firacode:bold:pixelsize=12'
 
 # start xfce-appfinder
 bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
