@@ -410,6 +410,8 @@ for_window [workspace="0"] floating enable
 
 #floating enabled from some programs - find with xprop
 
+for_window [title="Visualization Toolkit"] floating enable
+
 for_window [class="Arandr"] floating enable
 for_window [class="Bleachbit"] floating disable
 for_window [class="Blueberry.py"] floating enable
