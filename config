@@ -58,33 +58,6 @@ set $right l
 exec --no-startup-ip xrandr --output DP-2 --right-of DP-4 --auto
 # exec --no-startup-id xrandr --output HDMI2 --right-of HDMI1 --auto
 
-# my current setup
-# set $firstMonitor HDMI1
-# set $secondMonitor HDMI2
-
-#set $firstMonitor LVDS1
-#set $secondMonitor LVDS1
-
-#set $firstMonitor DVI-I-2
-#set $secondMonitor VGA-0
-
-#set $firstMonitor DVI-I-2
-#set $secondMonitor DVI-I-3
-
-#set $firstMonitor DVI-0
-#set $secondMonitor DVI-1
-
-# workspace 1 output $firstMonitor
-# workspace 2 output $firstMonitor
-# workspace 3 output $firstMonitor
-# workspace 4 output $firstMonitor
-# workspace 5 output $firstMonitor
-# workspace 6 output $secondMonitor
-# workspace 7 output $secondMonitor
-# workspace 8 output $secondMonitor
-# workspace 9 output $secondMonitor
-# workspace 10 output $secondMonitor
-
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym KP_End workspace 1
@@ -126,36 +99,19 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-
 #####################################################################################################################
 #################                          5 menu's in ArchLabs                                     #################
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -b -nb '$bg1' -nf '$orange' -sb '$bg2' -sf '$fg1' -fn 'firacode:bold:pixelsize=12'
-
-# start xfce-appfinder
-bindsym mod1+F3 exec --no-startup-id xfce4-appfinder
-
-# start rofi full
-# bindsym $mod+F11 exec --no-startup-id rofi -show run -fullscreen -font "Noto Sans 13"
-
-# start rofi small
-# bindsym $mod+F12 exec --no-startup-id rofi -show run -font "Noto Sans 13"
-
-# gmrun
-bindsym mod1+F2 exec --no-startup-id gmrun
-
-
+bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -b -nb '$bg1' -nf '$orange' -sb '$bg2' -sf '$fg1' -fn 'FiraCode:size=14'
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
 #####################################################################################################################
 
-
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 
 #Press $mod (super) and X to exit - check toolbar for next choices
 bindsym $mod+X mode "$mode_system"
@@ -174,21 +130,15 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
-
-
 #####################################################################################################################
 #################                          reload changed configuration                             #################
 #####################################################################################################################
-
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
-
-
 
 #####################################################################################################################
 #################                          Stopping an application                                  #################
@@ -197,13 +147,9 @@ bindsym $mod+Shift+c reload
 # kill focused window
 bindsym $mod+Shift+q kill
 
-
-
-
 #####################################################################################################################
 #################                          Moving around in i3                                      #################
 #####################################################################################################################
-
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -239,16 +185,11 @@ bindsym $mod+Shift+Right move right
 #################                          moving around workspaces                                 #################
 #####################################################################################################################
 
-
 # next/previous workspace
 
 # bindsym Mod1+Tab workspace next
 # bindsym Mod1+Shift+Tab workspace prev
 bindsym $mod+Tab workspace back_and_forth
-
-#navigate workspaces next / previous
-bindsym Mod1+Ctrl+Right workspace next
-bindsym Mod1+Ctrl+Left workspace prev
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -276,7 +217,6 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
@@ -284,13 +224,12 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+Shift+a focus child
 
 
 #####################################################################################################################
 #################                          resize                                                   #################
 #####################################################################################################################
-
 
 # resize window (you can also use the mouse for that)
 
@@ -319,10 +258,6 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-
-
-
-
 #####################################################################################################################
 #################                          choose the font                                          #################
 #####################################################################################################################
@@ -330,11 +265,10 @@ mode "resize" {
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # choose your font
-font Inconsolata 13
+font FiraCode-Regular 13
 
 # disable title by default
 for_window [class="^.*"] border pixel 1
-
 
 #####################################################################################################################
 #################                          execute applications at boot time                        #################
@@ -350,60 +284,12 @@ exec --no-startup-id nitrogen --restore
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
-#not workspace related
-
 # terminal ($TERMINAL to change)
 bindsym $mod+Return exec --no-startup-id i3-sensible-terminal; focus
-
-#System monitor
-# bindsym control+Shift+Escape exec --no-startup-id xfce4-taskmanager;focus
-
-#settings
-# bindsym control+mod1+m exec --no-startup-id xfce4-settings-manager
-
-#pavucontrol
-#archlabs conflict
-# bindsym control+mod1+u exec --no-startup-id pavucontrol
-
-# start xfce-appfinder
-#archlabs does not seem to work
-# bindsym control+mod1+a exec --no-startup-id xfce4-appfinder
-
-# Bowser
-bindsym $mod+F1 exec --no-startup-id vivaldi-stable;focus
-
-# Shell
-bindsym $mod+F2 exec --no-startup-id st;focus
-
-# vector
-bindsym $mod+F3 exec --no-startup-id inkscape;focus
-
-# pictures
-bindsym $mod+F4 exec --no-startup-id gimp;focus
-
-# wallpapers
-bindsym $mod+F5 exec --no-startup-id nitrogen;focus
-
-# media
-bindsym $mod+F6 exec --no-startup-id vlc;focus
-
-bindsym $mod+Shift+a sticky toggle
-
-#####################################################################################################################
-#################                          screenshots                                              #################
-#####################################################################################################################
-
-
-bindsym Print exec --no-startup-id scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
-# bindsym Control+Print exec --no-startup-id xfce4-screenshooter
-# bindsym Control+Shift+Print exec --no-startup-id gnome-screenshot -i
-#bindsym shift+Print exec --no-startup-id shutter
-
 
 #####################################################################################################################
 #################                          floating or tiled                                        #################
 #####################################################################################################################
-
 
 # have an always floating workspace for tests
 for_window [workspace="0"] floating enable
@@ -411,52 +297,8 @@ for_window [workspace="0"] floating enable
 #floating enabled from some programs - find with xprop
 
 for_window [title="Visualization Toolkit"] floating enable
-
 for_window [class="Arandr"] floating enable
-for_window [class="Bleachbit"] floating disable
-for_window [class="Blueberry.py"] floating enable
-for_window [class="Brasero"] floating disable
-for_window [class="Galculator"] floating enable
-# for_window [class="Google\ Play\ Music\ Desktop\ Player"] floating enable
-# for_window [class="Google\ Play\ Music\ Desktop\ Player"] resize set 300 300
-for_window [class="Gnome-disks"] floating disable
-for_window [class="^Gnome-font-viewer$"] floating enable
-for_window [class="^Gpick$"] floating enable
-for_window [class="Hexchat"] floating disable
-for_window [class="Imagewriter"] floating enable
-for_window [class="Font-manager"] floating enable
-for_window [class="qt5ct|Lxappearance"] floating enable
-for_window [class="Nitrogen"] floating disable
-for_window [class="Pavucontrol"] floating disable
-for_window [class="Peek"] floating enable
-for_window [class="^Skype$"] floating enable
-for_window [class="^Spotify$"] floating disable
-for_window [class="System-config-printer.py"] floating enable
-for_window [class="Unetbootin.elf"] floating enable
-for_window [class="Usb-creator-gtk"] floating enable
-for_window [class="^Vlc$"] floating disable
-for_window [class="Wine"] floating disable
-for_window [class="Xfburn"] floating disable
-for_window [class="Xfce4-appfinder"] floating enable
-for_window [class="Xfce4-settings-manager"] floating disable
-for_window [class="Xfce4-taskmanager"] floating enable
-
-
-#for_window [instance="gimp"] floating disable
-for_window [instance="script-fu"] border normal
-for_window [instance="variety"] floating disable
-
-
-for_window [title="Copying"] floating enable
-for_window [title="Deleting"] floating enable
-for_window [title="Moving"] floating enable
-for_window [title="^Terminator Preferences$"] floating enable
-
-
-#for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
 for_window [window_role="pop-up"] floating enable
-for_window [window_role="^Preferences$"] floating enable
-for_window [window_role="setup"] floating enable
 
 
 #####################################################################################################################
@@ -468,6 +310,7 @@ for_window [class="Gnome-terminal"] focus
 for_window [class="Termite"] focus
 for_window [class="Terminator"] focus
 for_window [class="st"] focus
+for_window [class="kitty"] focus
 
 #####################################################################################################################
 #################                          audio settings                                           #################
@@ -482,11 +325,6 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
-#bindsym XF86AudioPlay exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
-#bindsym XF86AudioNext exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
-#bindsym XF86AudioPrev exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-#bindsym XF86AudioStop exec --no-startup-id "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-
 
 #####################################################################################################################
 #################                          xbacklight                                               #################
@@ -495,42 +333,23 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
-
 #####################################################################################################################
 #################                          bar toggle                                               #################
 #####################################################################################################################
 
-
 # bar toggle, hide or show
 bindsym $mod+b bar mode toggle
-
 
 #####################################################################################################################
 #################                          border control                                           #################
 #####################################################################################################################
 
-
 # Border control
 hide_edge_borders both
 bindsym $mod+shift+b exec --no-startup-id i3-msg border toggle
 
-#changing border style
-#super+t in archlabs is starting terminal
-bindsym $mod+t border normal
-bindsym $mod+y border 1pixel
-bindsym $mod+u border none
-
-
-#new_window pixel 1
 new_window normal
-#new_window none
-
-#new_float pixel 1
 new_float normal
-#new_float none
-
-
-
 
 #####################################################################################################################
 #################                          Popups  control                                          #################
@@ -545,9 +364,7 @@ popup_during_fullscreen smart
 #####################################################################################################################
 
 #if you want transparency on non-focused windows, ...
-# exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
-
-
+exec_always --no-startup-id compton --config ~/.config/i3/compton.conf
 
 #####################################################################################################################
 #####################################################################################################################
@@ -565,31 +382,33 @@ set_from_resource $bg2 i3wm.color0 #0f0f0f
 set_from_resource $orange i3wm.color3 #fea63c
 set_from_resource $red i3wm.color1 #d42121
 
-bar {
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-    # height 25
-    workspace_buttons yes
-    # font firacode 10
-    #you can know the name via xrandr
-    # output DVI-I-1
-    # status_command i3status -c ~/.config/i3/i3status.conf
-    # status_command $HOME/.config/i3/myi3status.sh -c ~/.config/i3/i3status.conf
-    status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+# bar {
+
+#     # height 25
+    # workspace_buttons yes
+#     # font firacode 10
+#     #you can know the name via xrandr
+#     # output DVI-I-1
+#     # status_command i3status -c ~/.config/i3/i3status.conf
+#     # status_command $HOME/.config/i3/myi3status.sh -c ~/.config/i3/i3status.conf
+#     status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
 
 
-    colors {
-        background $bg1
-        statusline $fg1
-        separator  $fg2
+#     colors {
+#         background $bg1
+#         statusline $fg1
+#         separator  $fg2
 
-        #                  border   backgr.  text
-        focused_workspace  $bg1 $bg1 $orange
-        active_workspace   $bg1 $bg2 $fg2
-        inactive_workspace $bg1 $bg1 $fg2
-        urgent_workspace   $bg1 $bg1 $orange
-    }
+#         #                  border   backgr.  text
+#         focused_workspace  $bg1 $bg1 $orange
+#         active_workspace   $bg1 $bg2 $fg2
+#         inactive_workspace $bg1 $bg1 $fg2
+#         urgent_workspace   $bg1 $bg1 $orange
+#     }
 
-}
+
 
 
 client.focused          $bg1    $bg1    $orange  $bg1      $bg1
@@ -600,44 +419,10 @@ client.placeholder      $bg1    $bg1    $fg1     $bg1      $bg1
 
 client.background       $bg1
 
-
-
-#####################################################################################################################
-#####################################################################################################################
-########################################               THE   END          ###########################################
-#####################################################################################################################
-#####################################################################################################################
-
-
-
-#####################################################################################################################
-#################                          mouse settings in i3                                     #################
-#####################################################################################################################
-
-# NOT USED
-
-# mouse settings
-# The middle button over a titlebar kills the window
-# bindsym --release button2 kill
-
-# The middle button and a modifer over any part of the window kills the window
-# bindsym --whole-window $mod+button2 kill
-
-# The right button toggles floating
-# bindsym button3 floating toggle
-# bindsym $mod+button3 floating toggle
-
-# The side buttons move the window around
-# bindsym button9 move left
-# bindsym button8 move right
-
-
 #####################################################################################################################
 #################                          keyboard control                                         #################
 #####################################################################################################################
 
-# Settings of ArchLabs will be applied
-#exec --no-startup-id setxkbmap be
 exec --no-startup-id setxkbmap us
 
 
