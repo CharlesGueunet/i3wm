@@ -105,6 +105,8 @@ bindsym $mod+minus scratchpad show
 
 # start dmenu
 bindsym $mod+shift+d exec --no-startup-id dmenu_run -i -b -nb '$bg1' -nf '$orange' -sb '$bg2' -sf '$fg1' -fn 'FiraCode:size=14'
+# start rofi
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -show-icons
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
