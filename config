@@ -424,11 +424,11 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 
-client.focused          $bg1 $bg1  $green  $bg1  $green
-client.focused_inactive $bg1 $bg1   $fg1  $bg1   $bg1
-client.unfocused        $bg1 $bg1 $black  $bg1 $black
-client.urgent           $bg1 $bg1   $red  $bg1   $bg1
-client.placeholder      $bg1 $bg1   $fg1  $bg1   $bg1
+client.focused          $bg1 $bg1   $green  $bg1   $green
+client.focused_inactive $bg1 $bg1   $black  $bg1   $black
+client.unfocused        $bg1 $bg1   $black  $bg1   $black
+client.urgent           $bg1 $bg1   $red    $bg1   $bg1
+client.placeholder      $bg1 $bg1   $fg1    $bg1   $bg1
 
 client.background       $bg1
 
