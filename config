@@ -194,7 +194,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Tab workspace back_and_forth
 
 # switch to workspace with urgent window automatically
-for_window [urgent=latest] focus
+# for_window [urgent=latest] focus
 
 #####################################################################################################################
 #################                          Tiling parameters                                        #################
