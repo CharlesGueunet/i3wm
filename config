@@ -196,6 +196,8 @@ bindsym $mod+Tab workspace back_and_forth
 # switch to workspace with urgent window automatically
 # for_window [urgent=latest] focus
 
+for_window [class="Picture-in-Picture"] sticky enable
+
 #####################################################################################################################
 #################                          Tiling parameters                                        #################
 #####################################################################################################################
