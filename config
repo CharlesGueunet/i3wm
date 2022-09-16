@@ -272,9 +272,9 @@ mode "resize" {
 font pango:Fira Code Retina 0
 
 # disable title by default
-for_window [class="^.*"] border pixel 1
+# for_window [class="^.*"] border normal 2
 
-default_border pixel 1
+default_border normal 0
 default_floating_border pixel 1
 force_focus_wrapping yes
 
@@ -400,7 +400,7 @@ set_from_resource $orange i3wm.color3     #fea63c
 set_from_resource $red    i3wm.color1     #d42121
 set_from_resource $blue   i3wm.color4     #82aaff
 set_from_resource $green  i3wm.color2     #b7ce42
-set_from_resource $yellow i3wm.color11    #b7ce42
+set_from_resource $ylw    i3wm.color11    #b7ce42
 set_from_resource $black  i3wm.color8     #000000
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -431,9 +431,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 
-client.focused          $bg1 $bg1   $green  $bg1   $yellow
-client.focused_inactive $bg1 $bg1   $black  $bg1   $black
-client.unfocused        $bg1 $bg1   $black  $bg1   $black
+client.focused          $ylw $ylw   $green  $bg1   $bg1
+client.focused_inactive $bg1 $bg1   $black  $bg1   $bg1
+client.unfocused        $bg1 $bg1   $black  $bg1   $bg1
 client.urgent           $bg1 $bg1   $red    $bg1   $bg1
 client.placeholder      $bg1 $bg1   $fg1    $bg1   $bg1
 
