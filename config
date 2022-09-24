@@ -272,9 +272,9 @@ mode "resize" {
 font pango:Fira Code Retina 0
 
 # disable title by default
-# for_window [class="^.*"] border normal 2
+for_window [class="^.*"] border pixel 1
 
-default_border normal 0
+default_border pixel 1
 default_floating_border pixel 1
 force_focus_wrapping yes
 
@@ -431,7 +431,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 
-client.focused          $ylw $ylw   $green  $bg1   $bg1
+client.focused          $ylw $ylw   $green  $black   $black
 client.focused_inactive $bg1 $bg1   $black  $bg1   $bg1
 client.unfocused        $bg1 $bg1   $black  $bg1   $bg1
 client.urgent           $bg1 $bg1   $red    $bg1   $bg1
