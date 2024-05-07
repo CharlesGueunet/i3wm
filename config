@@ -378,7 +378,7 @@ popup_during_fullscreen smart
 #####################################################################################################################
 
 #if you want transparency on non-focused windows, ...
-exec_always --no-startup-id picom --experimental-backends --config ~/.config/i3/picom.conf
+exec_always --no-startup-id picom -c --experimental-backends --config ~/.config/i3/picom.conf
 
 #####################################################################################################################
 #####################################################################################################################
@@ -428,18 +428,17 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 
 
-client.focused          $ylw $ylw   $green  $black   $black
+client.focused          $blue $blue   $green  $blue   $blue
 client.focused_inactive $bg1 $bg1   $black  $bg1   $bg1
 client.unfocused        $bg1 $bg1   $black  $bg1   $bg1
 client.urgent           $bg1 $bg1   $red    $bg1   $bg1
 client.placeholder      $bg1 $bg1   $fg1    $bg1   $bg1
 
-client.background       $bg1
+client.background       $blue
 
 #####################################################################################################################
 #################                          keyboard control                                         #################
 #####################################################################################################################
 
 exec --no-startup-id setxkbmap us
-
 
